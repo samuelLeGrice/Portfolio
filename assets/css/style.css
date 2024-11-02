@@ -305,4 +305,12 @@ img {
         color: var(--color-brand);
     }
 
-  
+ @media (max-width: 991px) {
+    .footer-content {
+        text-align: center;
+    }
+
+    .footer-content .col-auto {
+        margin-bottom: 1rem;
+    }
+} 
