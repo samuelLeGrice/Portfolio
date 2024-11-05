@@ -14,6 +14,13 @@ AOS.init({
 
 });
 
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        preloader.style.display = 'none';
+    }, 1000); // 1 seconds delay
+});
+
 // Close navbar on link click
 document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
   link.addEventListener('click', () => {
