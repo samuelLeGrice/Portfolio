@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         const preloader = document.getElementById('preloader');
         preloader.style.display = 'none';
-    }, 1000); // 1 seconds delay
+    }, 1500); // 1 seconds delay
 });
 
 // Close navbar on link click

@@ -333,8 +333,8 @@ img {
     border: 8px solid var(--color-base);
     border-top: 8px solid var(--color-brand);
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     animation: spin 1s linear infinite;
 }
 
