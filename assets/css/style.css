@@ -88,7 +88,7 @@ img {
 
 /* NAVBAR */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background with slight transparency */
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background with higher opacity */
     font-size: 1em;
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
@@ -151,6 +151,30 @@ img {
     /* CONTENT WRAPPER */
     #content-wrapper {
         padding-left: var(--sidbar-width);
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        background-color: var(--color-base); /* Use base color for better theming */
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        display: inline-block;
+        float: none;
+    }
+
+    .navbar-nav .nav-link {
+        display: inline-block;
     }
 }
 
