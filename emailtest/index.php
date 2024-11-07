@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -96,9 +99,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->AltBody = "Name: {$name}\nEmail: {$email}\nSubject: {$subject}\nMessage: {$message}";
 
         $mail->send();
-        echo json_encode(['status' => 'success', 'message' => 'Message sent successfully']);
+        $output['status']['code'] = "200";
+        $output['status']['name'] = "ok";
+        $output['status']['description'] = "successfully sent email";
+        echo json_encode($output);
     } catch (Exception $e) {
-        echo json_encode(['status' => 'error', 'message' => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
+        $output['status']['code'] = "500";
+        $output['status']['name'] = "error";
+        $output['status']['description'] = "something went wrong, email not sent: {$mail->ErrorInfo}";
+        echo json_encode($output);
     }
 }
 ?>

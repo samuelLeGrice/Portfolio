@@ -14,15 +14,15 @@ $(document).ready(function() {
                 messageContainer.empty(); // Clear any previous messages
 
                 // If success
-                if (response.status === 'success') {
+                if (response.status.code === "200") {
                     messageContainer.addClass('alert alert-success');
-                    messageContainer.text(response.message + '!');
+                    messageContainer.text(response.status.description + '!');
 
                     // Optionally, reset the form
                     $('#contactForm')[0].reset();
                 } else {
                     messageContainer.addClass('alert alert-danger');
-                    messageContainer.text(response.message);
+                    messageContainer.text(response.status.description);
                 }
 
                 messageContainer.show();
