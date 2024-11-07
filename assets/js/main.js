@@ -51,7 +51,7 @@ window.addEventListener('scroll', () => {
 // Floating Particles
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
-    const numberOfParticles = 80;
+    const numberOfParticles = window.innerWidth <= 991 ? 60 : 80; // 40 particles on small devices, 80 on larger devices
 
     for (let i = 0; i < numberOfParticles; i++) {
         const particle = document.createElement('div');
