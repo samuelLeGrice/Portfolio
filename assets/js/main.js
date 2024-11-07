@@ -37,7 +37,7 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 150) {
-        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)'; // Slightly more opaque
+        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'; // Slightly more opaque
     } else {
         navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'; // Slightly transparent
     }
