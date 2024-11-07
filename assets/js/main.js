@@ -56,8 +56,13 @@ function createParticles() {
         particle.style.top = `${Math.random() * 100}%`;
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
-        if (Math.random() > 0.5) {
-            particle.classList.add('dark-green');
+        const random = Math.random();
+        if (random > 0.75) {
+            particle.classList.add('dark-blue');
+        } else if (random > 0.5) {
+            particle.classList.add('light-blue');
+        } else if (random > 0.25) {
+            particle.classList.add('navbar-color');
         }
         particlesContainer.appendChild(particle);
     }

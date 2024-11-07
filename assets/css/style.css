@@ -399,6 +399,14 @@ h2 {
     background-color: hsl(210, 36%, 23%); /* Darker blue */
 }
 
+.particle.light-blue {
+    background-color: hsl(204, 86%, 73%); /* Lighter blue */
+}
+
+.particle.navbar-color {
+    background-color: rgba(0, 0, 0, 0.7); /* Same color as navbar */
+}
+
 @keyframes float {
     0% {
         transform: translateY(0);
