@@ -104,10 +104,10 @@ document.getElementById('contactForm').addEventListener('submit', function(event
             }
             messageContainer.style.display = 'block';
 
-            // Hide the message after 5 seconds
+            // Hide the message after 10 seconds
             setTimeout(() => {
                 messageContainer.style.display = 'none';
-            }, 5000);
+            }, 10000);
         }
     };
 
