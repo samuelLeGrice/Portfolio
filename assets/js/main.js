@@ -33,10 +33,20 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
   });
 });
 
+// Change navbar background color on scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 150) {
+        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)'; // Slightly more opaque
+    } else {
+        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'; // Slightly transparent
+    }
+});
+
 // Floating Particles
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
-    const numberOfParticles = 120;
+    const numberOfParticles = 80;
 
     for (let i = 0; i < numberOfParticles; i++) {
         const particle = document.createElement('div');
