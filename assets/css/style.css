@@ -176,6 +176,18 @@ img {
     .navbar-nav .nav-link {
         display: inline-block;
     }
+
+    #home .container {
+        text-align: center;
+    }
+
+    #home img {
+        display: block;
+        margin: 0 auto 20px;
+        width: 75%; /* Set size to 0.75x */
+        border: 6px solid var(--color-brand); /* Add blue border */
+        border-radius: 50%; /* Make it circular */
+    }
 }
 
 /* BTN */
