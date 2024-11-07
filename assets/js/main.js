@@ -19,6 +19,8 @@ window.addEventListener('load', () => {
         const preloader = document.getElementById('preloader');
         preloader.style.display = 'none';
     }, 1500); // 1 seconds delay
+
+    createParticles();
 });
 
 // Close navbar on link click
@@ -30,5 +32,34 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
     }
   });
 });
+
+// Floating Particles
+function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    const numberOfParticles = 120;
+
+    for (let i = 0; i < numberOfParticles; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.width = `${Math.random() * 10 + 5}px`;
+        particle.style.height = particle.style.width;
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
+        if (Math.random() > 0.5) {
+            particle.classList.add('dark-green');
+        }
+        particlesContainer.appendChild(particle);
+    }
+
+    document.addEventListener('mousemove', (e) => {
+        const particles = document.querySelectorAll('.particle');
+        particles.forEach(particle => {
+            const dx = (particle.offsetLeft - e.clientX) / (Math.random() * 20 + 10);
+            const dy = (particle.offsetTop - e.clientY) / (Math.random() * 20 + 10);
+            particle.style.transform = `translate(${dx}px, ${dy}px)`;
+        });
+    });
+}
 
 
