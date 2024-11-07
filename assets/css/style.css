@@ -1,32 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-
-
 :root{
     --color-body: hsl(0, 0%, 100%);
     --color-heading: hsl(0, 0%, 99%);
-    --color-base: hsl(107, 96%, 11%);
-    --color-base2: hsl(134, 100%, 3%);
-    --color-brand: hsl(47, 88%, 53%);
-    --color-brand2:  hsl(47, 88%, 63%);
+    --color-base: hsl(210, 36%, 13%); /* Dark blue */
+    --color-base2: hsl(210, 36%, 18%); /* Slightly lighter dark blue */
+    --color-brand: hsl(204, 86%, 53%); /* Blue */
+    --color-brand2: hsl(204, 86%, 63%); /* Lighter blue */
     --sidbar-width: 240px;
-    --font-base:"Playfair Display";
-
+    --font-base: "Playfair Display";
 }
 
 body {
     background-color: var(--color-base2);
     color: var(--color-body);
     font-family: var(--font-base), sans-serif;
-
 }
 
-
-h1,h2,h3,h5,h6 {
+h1, h2, h3, h5, h6 {
     color: var(--color-heading);
     font-weight: 700;
 }
-
 
 a {
     text-decoration: none;
@@ -49,14 +43,17 @@ img {
 .bg-base {
     background-color: var(--color-base);
 }
+
 .about-me {
     padding: 3px;
     border: 3px;
     text-align: center;
 }
+
 .about-info {
     border: 5px;
 }
+
 .full-height {
     min-height: 100vh;
     height: 100%;
@@ -65,7 +62,7 @@ img {
     justify-content: center;
     padding-top: 80px;
     padding-bottom: 80px;
-    border-bottom: 2px solid rgba(8, 235, 12, 0.1);
+    border-bottom: 2px solid rgba(53, 86, 204, 0.1); /* Change to fit blue theme */
 }
 
 .shadow-effect {
@@ -227,17 +224,15 @@ img {
     height: 44px;
 }
 
-.card-custom-content:hover{
+.card-custom-content:hover {
     color: var(--color-brand);
 }
 
-.stack-title{
+.stack-title {
     color: var(--color-brand);
 }
 
 /* ICONS */
-
-
 .social-icons a {
     width: 40px;
     height: 40px;
@@ -249,92 +244,93 @@ img {
     font-size: 24px;
 }
 
-
-.stack-icons i{
+.stack-icons i {
     font-size: 4em;
 }
 
-.stack-icons i:hover
-.stack-icons h4:hover{
+.stack-icons i:hover,
+.stack-icons h4:hover {
     color: var(--color-brand);
 }
-#title{
+
+#title {
     font-size: 1em;
     font-weight: bold;
 }
 
-.about-icons i{
+.about-icons i {
     font-size: 4em;
 }
 
-.norm{ 
+.norm {
     color: var(--color-body);
 }
 
+.modal-content {
+    background-color: var(--color-base2);
+    color: var(--color-brand);
+}
 
+.modal-header {
+    background-color: var(--color-base2);
+    color: var(--color-brand);
+}
 
-    .modal-content {
-        background-color: var(--color-base2);
-        color: var(--color-brand);
-    }
+.modal-body {
+    color: var(--color-base2);
+}
 
-    .modal-header {
-        background-color: var(--color-base2);
-        color: var(--color-brand);
-    }
+.modal-title {
+    color: var(--color-brand);
+}
 
-    .modal-body {
-        color: var(--color-base2);
-    }
+.btn-close {
+    color: var(--color-brand);
+}
 
-    .modal-title {
-        color: var(--color-brand);
-    }
+.modal-content,
+.modal-header,
+.modal-body,
+.modal-title {
+    color: var(--color-brand);
+}
 
-    .btn-close {
-        color: var(--color-brand);
-    }
+.modal-body img {
+    border: 8px solid var(--color-brand);
+}
 
-    .modal-content, .modal-header, .modal-body, .modal-title {
-        color: var(--color-brand);
-    }
+.btn {
+    background-color: var(--color-brand);
+    color: var(--color-base);
+}
 
-    .modal-body img{
-        border: 8px solid var(--color-brand);
-    }
+.btn:hover {
+    background-color: var(--color-brand2);
+    color: var(--color-brand);
+}
 
-    .btn {
-        background-color: var(--color-brand);
-        color: var(--color-base);
-    }
+.modal-body {
+    background-color: var(--color-base2);
+    border-width: 4px 0 4px 0;
+    border-style: solid;
+    border-color: var(--color-brand);
+}
 
-    .btn:hover {
-        background-color: var(--color-brand2);
-        color: var(--color-brand);
-    }
+h2 {
+    text-decoration: underline;
+    color: var(--color-brand);
+}
 
-    .modal-body {
-        background-color: var(--color-base2);
-        border-width: 4px 0 4px 0;
-        border-style: solid;
-        border-color: var(--color-brand);
-    }
+.modal-body i {
+    font-size: 2.5em;
+    color: white;
+}
 
-    h2 {
-        text-decoration: underline;
-        color: var(--color-brand);
-    }
+.modal-body i:hover {
+    color: var(--color-brand);
+}
 
-    .modal-body i{
-        font-size: 2.5em;
-        color: white;
-    }
-
-    .modal-body i:hover{
-        color: var(--color-brand);
-    }
-
- @media (max-width: 991px) {
+@media (max-width: 991px) {
     .footer-content {
         text-align: center;
     }
@@ -394,7 +390,7 @@ img {
 }
 
 .particle.dark-green {
-    background-color: hsl(134, 100%, 20%);
+    background-color: hsl(210, 36%, 23%); /* Darker blue */
 }
 
 @keyframes float {
