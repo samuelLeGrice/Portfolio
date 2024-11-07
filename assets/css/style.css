@@ -18,7 +18,7 @@ body {
     font-family: var(--font-base);
 }
 
-h1, h2, h3, h5, h6 {
+h1, h2, h3, h5 {
     color: var(--color-heading);
     font-family: var(--font-heading);
     font-weight: 700;
@@ -270,7 +270,7 @@ img {
 
 .modal-content {
     background-color: var(--color-base2);
-    color: var(--color-brand);
+    color: var (--color-brand);
 }
 
 .modal-header {
