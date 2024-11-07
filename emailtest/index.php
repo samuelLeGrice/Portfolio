@@ -96,25 +96,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->AltBody = "Name: {$name}\nEmail: {$email}\nSubject: {$subject}\nMessage: {$message}";
 
         $mail->send();
-        echo '<script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>';
-    					echo '<span></span>';
-						echo "<script type='text/javascript'>";
-						echo "swal({
-    						title: 'Message sent Successfully',
-    						type: 'success',
-    						confirmButtonColor: '#000',
-    						confirmButtonText: 'CLOSE',
-						}).then((result) => {
-    						if (result.value || result.dismiss === swal.DismissReason.close) {
-        						// handle Confirm or Close button click
-        						window.location.href='../index.html#contact';
-    						} else {
-        						// handle other dismiss reasons if necessary
-    						}
-						});";
-						echo "</script>";
+        echo json_encode(['status' => 'success', 'message' => 'Message sent successfully']);
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo json_encode(['status' => 'error', 'message' => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
     }
 }
 ?>

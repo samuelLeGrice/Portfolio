@@ -82,4 +82,36 @@ function createParticles() {
     });
 }
 
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'emailtest/index.php', true);
+    xhr.setRequestHeader('Accept', 'application/json');
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            const response = JSON.parse(xhr.responseText);
+            const messageContainer = document.getElementById('messageContainer');
+            if (response.status === 'success') {
+                messageContainer.className = 'alert alert-success';
+                messageContainer.textContent = response.message + '!';
+                document.getElementById('contactForm').reset();
+            } else {
+                messageContainer.className = 'alert alert-error';
+                messageContainer.textContent = response.message;
+            }
+            messageContainer.style.display = 'block';
+
+            // Hide the message after 5 seconds
+            setTimeout(() => {
+                messageContainer.style.display = 'none';
+            }, 5000);
+        }
+    };
+
+    xhr.send(formData);
+});
+
 
