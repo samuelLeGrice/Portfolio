@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
 :root{
     --color-body: hsl(0, 0%, 100%);
@@ -8,17 +8,19 @@
     --color-brand: hsl(204, 86%, 53%); /* Blue */
     --color-brand2: hsl(204, 86%, 63%); /* Lighter blue */
     --sidbar-width: 240px;
-    --font-base: "Playfair Display";
+    --font-base: "Roboto", sans-serif;
+    --font-heading: "Montserrat", sans-serif;
 }
 
 body {
     background-color: var(--color-base2);
     color: var(--color-body);
-    font-family: var(--font-base), sans-serif;
+    font-family: var(--font-base);
 }
 
 h1, h2, h3, h5, h6 {
     color: var(--color-heading);
+    font-family: var(--font-heading);
     font-weight: 700;
 }
 
