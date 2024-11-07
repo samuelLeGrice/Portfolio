@@ -94,13 +94,21 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         if (xhr.readyState === XMLHttpRequest.DONE) {
             const response = JSON.parse(xhr.responseText);
             const messageContainer = document.getElementById('messageContainer');
+            const closeButton = document.createElement('button');
+            closeButton.className = 'close-button';
+            closeButton.innerHTML = '&times;';
+            closeButton.onclick = () => messageContainer.style.display = 'none';
+
+            messageContainer.innerHTML = ''; // Clear previous content
+            messageContainer.appendChild(closeButton);
+
             if (response.status === 'success') {
                 messageContainer.className = 'alert alert-success';
-                messageContainer.textContent = response.message + '!';
+                messageContainer.appendChild(document.createTextNode(response.message + '!'));
                 document.getElementById('contactForm').reset();
             } else {
                 messageContainer.className = 'alert alert-error';
-                messageContainer.textContent = response.message;
+                messageContainer.appendChild(document.createTextNode(response.message));
             }
             messageContainer.style.display = 'block';
 
