@@ -82,44 +82,6 @@ function createParticles() {
     });
 }
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
 
-    const formData = new FormData(this);
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'emailtest/index.php', true);
-    xhr.setRequestHeader('Accept', 'application/json');
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            const response = JSON.parse(xhr.responseText);
-            const messageContainer = document.getElementById('messageContainer');
-            const closeButton = document.createElement('button');
-            closeButton.className = 'close-button';
-            closeButton.innerHTML = '&times;';
-            closeButton.onclick = () => messageContainer.style.display = 'none';
-
-            messageContainer.innerHTML = ''; // Clear previous content
-            messageContainer.appendChild(closeButton);
-
-            if (response.status === 'success') {
-                messageContainer.className = 'alert alert-success';
-                messageContainer.appendChild(document.createTextNode(response.message + '!'));
-                document.getElementById('contactForm').reset();
-            } else {
-                messageContainer.className = 'alert alert-error';
-                messageContainer.appendChild(document.createTextNode(response.message));
-            }
-            messageContainer.style.display = 'block';
-
-            // Hide the message after 10 seconds
-            setTimeout(() => {
-                messageContainer.style.display = 'none';
-            }, 10000);
-        }
-    };
-
-    xhr.send(formData);
-});
 
 
