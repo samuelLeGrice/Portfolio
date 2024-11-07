@@ -316,6 +316,12 @@ img {
     border-color: var(--color-brand);
 }
 
+.modal-body p,
+.modal-body ul,
+.modal-body li {
+    color: var(--color-body); /* Set text color to white */
+}
+
 h2 {
     text-decoration: underline;
     color: var(--color-brand);
