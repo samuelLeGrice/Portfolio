@@ -36,11 +36,16 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 // Change navbar background color on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 150) {
-        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'; // Slightly more opaque
-    } else {
-        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.4)'; // Slightly transparent
-    }
+    const sections = document.querySelectorAll('section');
+    let opacity = 0.3;
+
+    sections.forEach((section, index) => {
+        if (window.scrollY >= section.offsetTop) {
+            opacity = 0.3 + (index * 0.1);
+        }
+    });
+
+    navbar.style.backgroundColor = `rgba(0, 0, 0, ${Math.min(opacity, 0.9)})`; // Cap opacity at 0.9
 });
 
 // Floating Particles
